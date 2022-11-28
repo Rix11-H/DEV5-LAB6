@@ -34,6 +34,7 @@ function postMessages() {
                     receiver: receiver,
                     date: date,
                 });
+                document.querySelector(".form__input").value = "";
             });        
     });
 };
