@@ -54,7 +54,7 @@ onMounted(() => {
             </div>
         </div>
         <div class="form">
-            <input type="text" name="message" class="form__input" id="message" placeholder="Comment">
+            <input type="text" name="message" class="form__input" id="messageInput" placeholder="Comment">
             <button class="form__button">Send</button>
         </div>
     </div>
