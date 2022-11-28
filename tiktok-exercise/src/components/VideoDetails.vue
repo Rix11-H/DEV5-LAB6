@@ -27,6 +27,7 @@ onMounted(() => {
 
 <style scoped>
 div {
-    padding: 0 2em;
+    padding: .4em 2em;
+    margin: 0;
 }
 </style>
