@@ -28,7 +28,12 @@ function postMessages() {
         })
             .then((response) => response.json())
             .then((data) => {
-                console.log(data);
+                chatMessages.chatMessages.push({
+                    message: message,
+                    sender: sender,
+                    receiver: receiver,
+                    date: date,
+                });
             });        
     });
 };
