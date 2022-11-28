@@ -1,8 +1,9 @@
 <script setup>
 
-import { ref, onMounted } from 'vue'
+import { ref, reactive, onMounted } from 'vue'
 
-let chatMessages = ref([]);
+let chatMessages = reactive( { chatMessages: [] } );
+let message = ref("");
 
 function postMessages() {
     document.querySelector(".form__button").addEventListener("click", function() {
@@ -37,7 +38,7 @@ onMounted(() => {
     fetch(apiUrl)
         .then((response) => response.json())
         .then((data) => {
-            chatMessages.value = data.data.messages;
+            chatMessages.chatMessages = data.data.messages;
         });
     postMessages();
 });
@@ -48,7 +49,7 @@ onMounted(() => {
     <div class="commentSection">
         <h2>Comments</h2>
         <div class="messagesContainer">
-            <div class="message"  v-for="c, index in chatMessages" v-bind:key="index">
+            <div class="message"  v-for="c in chatMessages.chatMessages" v-bind:key="c._id">
                 <h3 class="message__sender">{{ c.sender }}</h3>
                 <p class="message__text">{{ c.message }}</p>
             </div>
@@ -73,7 +74,7 @@ onMounted(() => {
 .messagesContainer {
     overflow-y: scroll;
     padding: 0 1em;
-    height: 70%;
+    height: 60vh;
     margin: 0;
 }
 

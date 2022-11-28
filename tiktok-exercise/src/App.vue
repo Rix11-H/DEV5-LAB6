@@ -20,8 +20,6 @@ grid-template-columns: 8fr 4fr;
 grid-template-rows: 1fr 4fr;
 grid-column-gap: 0px;
 grid-row-gap: 0px;
-
-overflow-y: hidden;
 }
 
 .playerBox { grid-area: 1 / 1 / 4 / 2; }
